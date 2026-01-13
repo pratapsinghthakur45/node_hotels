@@ -29,5 +29,5 @@ const menuItemSchema = new mongoose.Schema({
 });
 
 const MenuItem = mongoose.model("MenuItem",menuItemSchema);
-
+//mongodb interview
 export default MenuItem;
