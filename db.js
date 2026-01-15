@@ -1,7 +1,9 @@
 import mongoose from 'mongoose';
-
+import dotenv from 'dotenv';
+dotenv.config();
 // MongoDB connection URL
-const mongodbURL = 'mongodb://127.0.0.1:27017/hotels';
+//const mongodbURL = process.env.MongoDB_URL_Local;
+const mongodbURL = process.env.MongoDB_URL;
 
 mongoose.connect(mongodbURL);
 
@@ -10,6 +12,7 @@ const db = mongoose.connection;
 
 // Event listeners
 db.on('connected', () => {
+  
   console.log('✅ Connected to MongoDB server');
 });
 

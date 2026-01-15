@@ -1,5 +1,7 @@
 import express from 'express';
 import db from './db.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 //import person routes
 import personRoutes from './routes/personRoutes.js';
@@ -27,7 +29,8 @@ app.use('/person',personRoutes);
 app.use('/menu',menuItemRoutes);
  
 //listen on this port on our device
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
   console.log('Server is running on http://localhost:3000')
 });
 
